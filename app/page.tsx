@@ -17,8 +17,8 @@ export default function Page() {
 
           {/* Título ACESSO LIBERADO */}
           <h1
-            className="font-display leading-[0.9] tracking-tight"
-            style={{ fontFamily: "Anton, Impact, sans-serif" }}
+            className="leading-[0.9] tracking-tight"
+            style={{ fontFamily: "var(--font-anton), Anton, Impact, sans-serif" }}
           >
             <span className="block text-4xl sm:text-6xl text-white uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
               Acesso
