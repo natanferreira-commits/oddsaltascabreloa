@@ -1,5 +1,5 @@
 export default function Page() {
-  const botLink = "https://t.me/CabreloaBot";
+  const botLink = "https://t.me/+txgd2kz5u38xZjYx";
 
   return (
     <main className="min-h-screen w-full flex flex-col hero-bg">
