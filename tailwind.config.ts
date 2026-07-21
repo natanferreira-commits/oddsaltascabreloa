@@ -9,9 +9,9 @@ const config: Config = {
           bg: "#0A0512",
           purple: "#7C3AED",
           purpleLight: "#A78BFA",
-          gold: "#F5C542",
-          lime: "#C0FF00",
-          limeSoft: "#84CC16"
+          neon: "#B45EFF",
+          neonDeep: "#9333EA",
+          gold: "#F5C542"
         }
       },
       fontFamily: {
@@ -19,7 +19,7 @@ const config: Config = {
         display: ["'Anton'", "Impact", "sans-serif"]
       },
       boxShadow: {
-        cta: "0 0 0 1px rgba(192,255,0,0.5), 0 0 40px -8px rgba(192,255,0,0.7)"
+        cta: "0 0 0 1px rgba(180,94,255,0.5), 0 0 40px -8px rgba(180,94,255,0.7)"
       }
     }
   },
