@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #0A0512;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes pulseCta {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(192, 255, 0, 0.5), 0 0 32px -8px rgba(192, 255, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(192, 255, 0, 0.7), 0 0 48px -6px rgba(192, 255, 0, 0.85);
+  }
+}
+
+.pulse-cta {
+  animation: pulseCta 2.4s ease-in-out infinite;
+}
+
+.hero-bg {
+  background-color: #0A0512;
+  background-image: url('/cabreloa-mob.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    background-image: url('/cabreloa-desk.png');
+    background-position: center;
+  }
+}
