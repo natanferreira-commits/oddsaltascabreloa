@@ -19,13 +19,13 @@ export default function Page() {
 
             {/* Título ACESSO LIBERADO */}
             <h1
-              className="leading-[0.9] tracking-tight"
+              className="leading-[0.85] tracking-tight"
               style={{ fontFamily: "var(--font-anton), Anton, Impact, sans-serif" }}
             >
-              <span className="block text-5xl sm:text-6xl md:text-7xl text-white uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <span className="block text-7xl sm:text-8xl md:text-9xl text-white uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Acesso
               </span>
-              <span className="block text-6xl sm:text-7xl md:text-8xl text-brand-neon uppercase drop-shadow-[0_2px_20px_rgba(180,94,255,0.55)]">
+              <span className="block text-8xl sm:text-9xl md:text-[10rem] text-brand-neon uppercase drop-shadow-[0_2px_20px_rgba(180,94,255,0.55)]">
                 Liberado
               </span>
             </h1>
