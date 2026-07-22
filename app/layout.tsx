@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 const META_PIXEL_ID = "1344726187578487";
+const GA4_MEASUREMENT_ID = "G-KD9E0ZRMT5";
 
 export const metadata: Metadata = {
   title: "Cabreloa · Grupo de Odds Altas",
@@ -34,6 +35,20 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${anton.variable} ${inter.variable}`}>
       <body>
         {children}
+
+        {/* Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA4_MEASUREMENT_ID}');
+          `}
+        </Script>
 
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">

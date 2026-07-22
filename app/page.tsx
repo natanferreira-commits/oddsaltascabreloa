@@ -3,6 +3,7 @@
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -35,6 +36,15 @@ export default function Page() {
     // Pixel client-side com event_id (pra deduplicação)
     if (typeof window !== "undefined" && typeof window.fbq === "function") {
       window.fbq("track", "Lead", customData, { eventID: eventId });
+    }
+
+    // GA4 · evento generate_lead (padrão Google pra conversão)
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", {
+        content_name: customData.content_name,
+        content_category: customData.content_category,
+        event_id: eventId
+      });
     }
 
     // CAPI server-side com o mesmo event_id
