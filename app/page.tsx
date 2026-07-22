@@ -6,15 +6,63 @@ declare global {
   }
 }
 
+function getCookie(name: string): string | undefined {
+  if (typeof document === "undefined") return undefined;
+  const match = document.cookie.match(
+    new RegExp(`(^|;\\s*)(${name})=([^;]*)`)
+  );
+  return match ? decodeURIComponent(match[3]) : undefined;
+}
+
+function makeEventId(): string {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
 export default function Page() {
-  const botLink = "https://t.me/oddsaltascabreloa_bot?start=6a5fd9482a4a5ab7410ca85a";
+  const botLink =
+    "https://t.me/oddsaltascabreloa_bot?start=6a5fd9482a4a5ab7410ca85a";
 
   const handleLeadClick = () => {
+    const eventId = makeEventId();
+    const customData = {
+      content_name: "Grupo Odds Altas Cabreloa",
+      content_category: "Bingo Blindado"
+    };
+
+    // Pixel client-side com event_id (pra deduplicação)
     if (typeof window !== "undefined" && typeof window.fbq === "function") {
-      window.fbq("track", "Lead", {
-        content_name: "Grupo Odds Altas Cabreloa",
-        content_category: "Bingo Blindado"
+      window.fbq("track", "Lead", customData, { eventID: eventId });
+    }
+
+    // CAPI server-side com o mesmo event_id
+    if (typeof window !== "undefined") {
+      const body = {
+        event_id: eventId,
+        event_name: "Lead",
+        event_source_url: window.location.href,
+        fbp: getCookie("_fbp"),
+        fbc: getCookie("_fbc"),
+        custom_data: customData
+      };
+
+      // fire-and-forget — não bloqueia navegação
+      const blob = new Blob([JSON.stringify(body)], {
+        type: "application/json"
       });
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon("/api/track", blob);
+      } else {
+        fetch("/api/track", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+          keepalive: true
+        }).catch(() => {});
+      }
     }
   };
 
