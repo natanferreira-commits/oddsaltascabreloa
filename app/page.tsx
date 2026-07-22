@@ -1,5 +1,22 @@
+"use client";
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 export default function Page() {
   const botLink = "https://t.me/oddsaltascabreloa_bot?start=6a5fd9482a4a5ab7410ca85a";
+
+  const handleLeadClick = () => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {
+        content_name: "Grupo Odds Altas Cabreloa",
+        content_category: "Bingo Blindado"
+      });
+    }
+  };
 
   return (
     <main className="min-h-screen w-full flex flex-col hero-bg">
@@ -41,6 +58,7 @@ export default function Page() {
               href={botLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleLeadClick}
               className="shine-cta pulse-cta group mt-2 w-full max-w-md inline-flex items-center justify-center gap-2 py-5 px-6 rounded-full bg-brand-neon text-white font-black text-lg sm:text-xl uppercase tracking-wide hover:brightness-110 active:scale-[0.98] transition"
             >
               <span>Quero entrar agora</span>
