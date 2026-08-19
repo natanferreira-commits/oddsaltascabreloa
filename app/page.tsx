@@ -24,7 +24,7 @@ function makeEventId(): string {
 
 export default function Page() {
   const botLink =
-    "https://t.me/cabreloa_bot?start=6a85e9fc11313506110fe680";
+    "https://telegram.me/+h2oHZDxMvAQ4ZTUx";
 
   const handleLeadClick = () => {
     const eventId = makeEventId();

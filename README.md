@@ -22,5 +22,5 @@ Deploy automático via Vercel na branch `main`.
 
 ## Link do bot
 
-O botão CTA aponta pra `https://t.me/cabreloa_bot?start=6a85e9fc11313506110fe680` (bot com start payload).
+O botão CTA aponta pra `https://telegram.me/+h2oHZDxMvAQ4ZTUx` (link de entrada do funil Trackgram).
 Trocar em `app/page.tsx` na variável `botLink`.
