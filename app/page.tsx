@@ -24,7 +24,7 @@ function makeEventId(): string {
 
 export default function Page() {
   const botLink =
-    "https://t.me/oddsaltascabreloa_bot?start=6a5fd9482a4a5ab7410ca85a";
+    "https://t.me/cabreloa_bot?start=6a85e9fc11313506110fe680";
 
   const handleLeadClick = () => {
     const eventId = makeEventId();

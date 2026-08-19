@@ -22,5 +22,5 @@ Deploy automático via Vercel na branch `main`.
 
 ## Link do bot
 
-O botão CTA aponta pra `https://t.me/+txgd2kz5u38xZjYx` (link do grupo).
+O botão CTA aponta pra `https://t.me/cabreloa_bot?start=6a85e9fc11313506110fe680` (bot com start payload).
 Trocar em `app/page.tsx` na variável `botLink`.
