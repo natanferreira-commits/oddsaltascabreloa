@@ -75,6 +75,15 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+
+        {/* Trackgram · rastreio de leads no Telegram */}
+        <Script
+          src="https://api.trackgram.com.br/tracker.js"
+          strategy="afterInteractive"
+          data-trackgram-channel="174"
+          data-trackgram-bot="228"
+          data-trackgram-bot-username="cabreloa_bot"
+        />
       </body>
     </html>
   );
